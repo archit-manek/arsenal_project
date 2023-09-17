@@ -1,9 +1,9 @@
 import requests
-from config import properties
-from config import endpoints
+from settings import properties
+from settings import endpoints
 
 def get_goals_scored():
-    response = requests.get(f'{BASE_URL}/team?key={API_KEY}')
+    response = requests.get(f'{endpoints.BASE_URL}/team?key={properties.API_KEY}')
     if response.status_code == 200:
         return response.json()
     return None
